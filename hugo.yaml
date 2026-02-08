@@ -132,32 +132,22 @@ params:
 menu:
   main:
     - identifier: search
-      name: search
+      name: Search
       url: /search/
       weight: 5
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
     - identifier: tags
-      name: tags
+      name: Tags
       url: /tags/
       weight: 20
-    - identifier: series
-      name: series
-      url: /series/
-      weight: 25
-    - identifier: example
-      name: example.org
-      url: https://example.org
+    - identifier: about
+      name: About
+      url: /about/
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 
 taxonomies:
-  category: categories
   tag: tags
-  series: series
 
 related:
   includeNewer: true
@@ -166,10 +156,6 @@ related:
   indices:
     - name: tags
       weight: 100
-    - name: categories
-      weight: 80
-    - name: series
-      weight: 70
     - name: date
       weight: 10
 
