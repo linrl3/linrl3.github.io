@@ -1,0 +1,19 @@
+<style>
+  #reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    z-index: 9999;
+    background: var(--primary, #2d7ff9);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    transition: width 0.1s linear;
+    pointer-events: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #reading-progress {
+      transition: none;
+    }
+  }
+</style>

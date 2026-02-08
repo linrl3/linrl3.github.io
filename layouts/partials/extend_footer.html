@@ -1,0 +1,26 @@
+<script>
+  (function () {
+    function ensureBar() {
+      var bar = document.getElementById('reading-progress');
+      if (!bar) {
+        bar = document.createElement('div');
+        bar.id = 'reading-progress';
+        document.body.appendChild(bar);
+      }
+      return bar;
+    }
+
+    function updateProgress() {
+      var bar = ensureBar();
+      var doc = document.documentElement;
+      var scrollTop = window.pageYOffset || doc.scrollTop || 0;
+      var height = doc.scrollHeight - doc.clientHeight;
+      var progress = height > 0 ? (scrollTop / height) * 100 : 0;
+      bar.style.width = progress.toFixed(2) + '%';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  })();
+</script>

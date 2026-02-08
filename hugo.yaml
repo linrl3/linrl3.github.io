@@ -8,6 +8,12 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
 googleAnalytics: UA-123-45
 
 minify:
@@ -30,17 +36,18 @@ params:
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
+  ShowCodeCopyButtons: true
   ShowWordCount: true
+  ShowRelatedPosts: true
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
-  comments: false
+  comments: true
   hidemeta: false
   hideSummary: false
-  showtoc: false
-  tocopen: false
+  showtoc: true
+  tocopen: true
 
   assets:
     # disableHLJS: true # to disable highlight.js
@@ -98,6 +105,19 @@ params:
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
+  giscus:
+    repo: "linrl3/linrl3.github.io"
+    repoId: "R_kgDOLkT_3Q"
+    category: "General"
+    categoryId: "DIC_kwDOLkT_3c4C2DEf"
+    mapping: "url"
+    strict: "0"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "en"
+
   # for search
   # https://fusejs.io/api/options.html
   fuseOpts:
@@ -111,6 +131,10 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 5
     - identifier: categories
       name: categories
       url: /categories/
@@ -119,12 +143,36 @@ menu:
       name: tags
       url: /tags/
       weight: 20
+    - identifier: series
+      name: series
+      url: /series/
+      weight: 25
     - identifier: example
       name: example.org
       url: https://example.org
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
+related:
+  includeNewer: true
+  threshold: 80
+  toLower: false
+  indices:
+    - name: tags
+      weight: 100
+    - name: categories
+      weight: 80
+    - name: series
+      weight: 70
+    - name: date
+      weight: 10
+
 markup:
   highlight:
     noClasses: false
