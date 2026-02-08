@@ -1,5 +1,5 @@
 {{- $g := .Site.Params.giscus -}}
-{{- if and .Site.Params.comments $g $g.repo $g.repoId $g.category $g.categoryId -}}
+{{- if and .Site.Params.comments .IsPage (eq .Section "posts") $g $g.repo $g.repoId $g.category $g.categoryId -}}
 <div class="giscus"></div>
 <script
   src="https://giscus.app/client.js"

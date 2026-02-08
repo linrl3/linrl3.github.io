@@ -16,4 +16,36 @@
       transition: none;
     }
   }
+  .about-social {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1.25rem 0 0;
+  }
+  .about-social__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--border, #e3e3e3);
+    color: var(--primary, #222);
+    background: var(--theme, #fff);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .about-social__link:hover {
+    transform: translateY(-1px);
+    border-color: var(--primary, #2d7ff9);
+  }
+  .about-social__link svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+  .about-social__text {
+    font-size: 0.85rem;
+    padding: 0 0.35rem;
+  }
 </style>

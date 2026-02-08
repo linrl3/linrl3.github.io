@@ -1,5 +1,5 @@
-baseURL: "https://examplesite.com/"
-title: linrl3 site
+baseURL: "https://linrl3.github.io/"
+title: linrl3 
 paginate: 5
 theme: PaperMod
 
@@ -59,7 +59,7 @@ params:
     safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "Home"
+    text: "linrl3"
     icon: /apple-touch-icon.png
     iconHeight: 35
 
@@ -83,7 +83,7 @@ params:
     Title: "Hi there \U0001F44B"
     Content: Welcome to linrl3's blog
 
-  socialIcons:
+  aboutSocialIcons:
     - name: github
       url: "https://github.com/linrl3"
 
